@@ -4,19 +4,19 @@ pub struct Position{
     pub y: i32
 }
 
-impl Position {
-    //让编译器不警告
-    #[allow(dead_code)]
-    //根据方向移动
-    pub fn move_to_dir(&mut self, dir: Direction){
-        match dir {
-            Direction::Up => self.y -= 1,
-            Direction::Down => self.y += 1,
-            Direction::Left => self.x -= 1,
-            Direction::Right => self.x += 1
-        }
-    }
-}
+// impl Position {
+//     //让编译器不警告
+//     #[allow(dead_code)]
+//     //根据方向移动
+//     pub fn move_to_dir(&mut self, dir: Direction){
+//         match dir {
+//             Direction::Up => self.y -= 1,
+//             Direction::Down => self.y += 1,
+//             Direction::Left => self.x -= 1,
+//             Direction::Right => self.x += 1
+//         }
+//     }
+// }
 
 #[derive(Debug, Copy, Clone, PartialEq)]
 pub enum Direction {
