@@ -13,6 +13,7 @@ fn fps_in_ms(fps: f64) -> f64 {
     1.0 / fps
 }
 
+//产出任意位置的函数，用于生成食物的位置和游戏开始蛇的位置
 fn rand_pos(width: u32, height: u32) -> Position {
     let mut rng = rand::thread_rng();
     

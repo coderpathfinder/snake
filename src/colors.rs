@@ -1,5 +1,4 @@
 use piston_window::types::Color;
- 
 
 pub const BACKGROUND: Color = [0.0, 0.0, 0.0, 1.0];//背景黑色
 pub const SCORE: Color = [1.0, 1.0, 1.0, 1.0];//分数白色

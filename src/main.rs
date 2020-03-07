@@ -23,8 +23,8 @@ fn main() {
             WINDOW_TITLE,
             size
         )
-        .resizable(false)
-        .exit_on_esc(true)
+        .resizable(false)//禁止最大化窗口
+        .exit_on_esc(true)//按ESC键退出
         .build()
         .unwrap();
 
@@ -33,12 +33,13 @@ fn main() {
         .for_folder("assets").unwrap();
         let mut glyphs = window.load_font(assets.join("retro-gaming.ttf")).unwrap();
 
-        let mut main: Game = Game::new(WIDTH, HEIGHT);
-        main.start();
+        let mut main: Game = Game::new(WIDTH, HEIGHT);//创建游戏实例
+        main.start();//取消暂停状态
 
         //游戏主循环
         while let Some(event) = window.next() {
             if let Some(Button::Keyboard(key)) = event.press_args() {
+                //获取事件中的按键
                 main.key_down(key);
             }
 
@@ -46,6 +47,7 @@ fn main() {
                 //设置分数显式的字体和为位置大小等参数
                 let transform = ctx.transform.trans(10.0, 20.0);
                 let mut s = "score: ".to_string();
+                //获取分数
                 s.push_str(main.update_score().to_string().as_ref());
                 clear(colors::BACKGROUND, g);
                 text::Text::new_color(colors::SCORE, 15).draw(
@@ -56,11 +58,12 @@ fn main() {
                     g
                 ).unwrap();
 
+                //绘制
                 main.draw(ctx, g);
-                // Update glyphs before rendering.
                 glyphs.factory.encoder.flush(device);
             });
 
+            //更新
             event.update( |arg| {
                 main.update(arg.dt);
             } );

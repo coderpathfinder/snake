@@ -31,6 +31,7 @@ impl Snake {
         }
     }
 
+    //蛇的移动更新，复制一个head加在链表头，再将尾部删除，将head坐标根据当前移动方向更新
     pub fn update(&mut self, width: u32, height: u32) {
         if self.tail.len() > 0 {
             self.tail.push_front(self.head.clone());
@@ -44,6 +45,7 @@ impl Snake {
             Direction::Right => self.head.x += 1
         }
 
+        //当蛇移动超出屏幕的处理
         if self.head.x >= width as i32 {
             self.head.x = 0;
         }else if self.head.x < 0 {
@@ -58,6 +60,7 @@ impl Snake {
 
     }
 
+    //绘制蛇
     pub fn draw(&self, ctx: &Context, g: &mut G2d) {
         for block in self.tail.iter() {
             draw_block(colors::SNAKE, block, &ctx, g);
@@ -66,6 +69,7 @@ impl Snake {
         draw_shake_head(colors::SNAKE, &self.head, &ctx, g, &self.direction);
     }
 
+    //根据按键改变蛇的移动方向
     pub fn set_dir(&mut self, dir:Direction) {
         if dir == self.direction.opposite() || !self.updated_tail_pos {
             return;
@@ -79,6 +83,7 @@ impl Snake {
         (self.tail.len() as u32) - SNAKE_INIT_LENGTH
     }
 
+    //判断游戏结束
     pub fn is_over(&self) -> bool {
         for pos in self.tail.iter() {
             if *pos == self.head {
@@ -113,6 +118,7 @@ impl Snake {
         false
     }
 
+    //蛇变长
     pub fn grow(&mut self) {
         let last = match self.tail.back() {
             Some(pos) => pos.clone(),

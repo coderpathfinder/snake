@@ -5,6 +5,7 @@ use piston_window::{rectangle, Context, G2d};
 
 pub const BLOCK_SIZE: f64 = 20.0;
 
+//绘制正方形
 pub fn draw_block(c: Color, pos: &Position, ctx: &Context, g: &mut G2d) {
     rectangle(
         c,
@@ -19,6 +20,7 @@ pub fn draw_block(c: Color, pos: &Position, ctx: &Context, g: &mut G2d) {
     );
 }
 
+//绘制蛇头，重要的是蛇的眼睛要随移动的方向改变
 pub fn draw_shake_head(c: Color, pos: &Position, ctx: &Context, g: &mut G2d, dir: &Direction) {
     draw_block(c, pos, ctx, g);
 
@@ -62,6 +64,7 @@ pub fn block_in_pixels(n: u32) -> u32 {
     n * BLOCK_SIZE as u32
 }
 
+//绘制游戏结束画面
 pub fn draw_overlay(c: Color, ctx: &Context, g: &mut G2d, size: (u32,u32)) {
     rectangle(
         c,

@@ -5,7 +5,9 @@ pub struct Position{
 }
 
 impl Position {
+    //让编译器不警告
     #[allow(dead_code)]
+    //根据方向移动
     pub fn move_to_dir(&mut self, dir: Direction){
         match dir {
             Direction::Up => self.y -= 1,
@@ -25,6 +27,7 @@ pub enum Direction {
 }
 
 impl Direction {
+    //获取相反的方向
     pub fn opposite(&self) -> Direction {
         match *self {
             Direction::Up => Direction::Down,
