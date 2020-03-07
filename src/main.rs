@@ -45,7 +45,7 @@ fn main() {
             window.draw_2d(&event, |ctx, g, device| {
                 //设置分数显式的字体和为位置大小等参数
                 let transform = ctx.transform.trans(10.0, 20.0);
-                let mut s = "score".to_string();
+                let mut s = "score: ".to_string();
                 s.push_str(main.update_score().to_string().as_ref());
                 clear(colors::BACKGROUND, g);
                 text::Text::new_color(colors::SCORE, 15).draw(
