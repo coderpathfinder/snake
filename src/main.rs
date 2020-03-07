@@ -23,7 +23,7 @@ fn main() {
             WINDOW_TITLE,
             size
         )
-        //.resizable(false)
+        .resizable(false)
         .exit_on_esc(true)
         .build()
         .unwrap();
