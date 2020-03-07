@@ -26,7 +26,7 @@ pub fn draw_shake_head(c: Color, pos: &Position, ctx: &Context, g: &mut G2d, dir
 
     fn draw_eye(ctx: &Context, g: &mut G2d, x: f64, y: f64) {
         rectangle(
-            colors::BACKGROUND,
+            colors::EYE,
             [x, y, 4.0, 4.0],
             ctx.transform,
             g
