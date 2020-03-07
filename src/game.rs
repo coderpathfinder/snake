@@ -90,7 +90,7 @@ impl Game {
             Key::S | Key::Down => self.snake.set_dir(Direction::Down),
             Key::A | Key::Left => self.snake.set_dir(Direction::Left),
             Key::D | Key::Right => self.snake.set_dir(Direction::Right),
-            Key::R | Key::P => self.paused = true,
+            Key::R | Key::P => self.paused = !self.paused,
             _ => {}
         }
     }
