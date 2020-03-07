@@ -58,7 +58,7 @@ impl Snake {
 
     }
 
-    pub fn draw(&self, ctx: Context, g: &mut G2d) {
+    pub fn draw(&self, ctx: &Context, g: &mut G2d) {
         for block in self.tail.iter() {
             draw_block(colors::SNAKE, block, &ctx, g);
         }
