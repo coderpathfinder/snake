@@ -1,0 +1,15 @@
+[package]
+name = "snake"
+version = "0.1.0"
+authors = ["pathfinder <pathfinder8848@163.com>"]
+edition = "2018"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[[bin]]
+name = "snake"
+
+[dependencies]
+piston_window = "0.107.0"
+find_folder = "0.3.0"
+rand = "0.6.5"
