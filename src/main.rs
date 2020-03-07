@@ -48,7 +48,7 @@ fn main() {
 
                 clear(colors::BACKGROUND, g);
                 text::Text::new_color(colors::SCORE, 15).draw(
-                    "score:".to_string().push_str(main.update_score().to_string()).as_ref(),
+                    &"score:".to_string().push_str(main.update_score().to_string()),
                     &mut glyphs,
                     &ctx.draw_state,
                     transform,

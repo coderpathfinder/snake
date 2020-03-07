@@ -5,7 +5,7 @@ use keyboard::Key;
 use crate::colors;
 use crate::draw::*;
 use crate::physics::{Direction, Position};
-use crate::snake::*;
+use crate::snake::Snake;
 
 const FPS: f64 = 10.0;
 
@@ -90,7 +90,7 @@ impl Game {
             Key::S | Key::Down => self.snake.set_dir(Direction::Down),
             Key::A | Key::Left => self.snake.set_dir(Direction::Left),
             Key::D | Key::Right => self.snake.set_dir(Direction::Right),
-            Key::R | Key::P => self.paused = true;
+            Key::R | Key::P => self.paused = true,
             _ => {}
         }
     }

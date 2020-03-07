@@ -76,7 +76,7 @@ impl Snake {
     }
 
     pub fn get_len(&self) -> u32 {
-        (&self.tail.len() - SNAKE_INIT_LENGTH) as u32
+        (self.tail.len() as u32) - SNAKE_INIT_LENGTH
     }
 
     pub fn is_over(&self) -> bool {
