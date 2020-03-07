@@ -7,7 +7,7 @@ use crate::physics::{Direction, Position};
 
 const SNAKE_INIT_LENGTH: u32 = 2;
 
-struct Snake {
+pub struct Snake {
     direction: Direction,
     head: Position,
     tail: LinkedList<Position>,
